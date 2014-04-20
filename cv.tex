@@ -1,0 +1,645 @@
+\documentclass[10pt]{article}
+\usepackage{calc}
+\reversemarginpar
+\usepackage[paper=a4paper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=30.5mm,    % Length of section titles
+            marginparsep=1.5mm,       % Space between titles and text
+            margin=25mm,              % 25mm margins
+            includemp]{geometry}
+\setlength{\parindent}{0in}
+\usepackage{paralist}
+\usepackage{fancyhdr,lastpage}
+\usepackage{mdwlist} % starred lists are more compact
+\pagestyle{fancy}
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage}
+                    \hfill \,}}
+% Finally, give us PDF bookmarks
+\usepackage{color,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+%%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The title (name) with a horizontal rule under it
+%
+% Usage: \makeheading{name}
+%
+% Place at top of document. It should be the first thing.
+\newcommand{\makeheading}[1]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+                {\large \bfseries #1}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{1pt}%
+         \end{minipage}}
+
+\renewcommand{\section}[2]%
+        {\pagebreak[2]\vspace{1.3\baselineskip}%
+         \phantomsection\addcontentsline{toc}{section}{#1}%
+         \hspace{0in}%
+         \marginpar{
+         \raggedright \scshape #1}#2}
+
+% An itemize-style list with lots of space between items
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1]}{\end{itemize}%
+         \vspace{-.6\baselineskip}}
+
+% An environment IDENTICAL to outerlist that has better pre-list spacing
+% when used as the first thing in a \section 
+\newenvironment{lonelist}[1][\enskip\textbullet]%
+        {\vspace{-\baselineskip}\begin{list}{#1}{%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+
+% An itemize-style list with little space between items
+\newenvironment{innerlist}[1][\enskip\textbullet]%
+        {\begin{compactitem}[#1]}{\end{compactitem}}
+
+% To add some paragraph space between lines.
+% This also tells LaTeX to preferably break a page on one of these gaps
+% if there is a needed pagebreak nearby.
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\makeheading{Nicholas R. Hood \begin{footnotesize}BSc (Hons)(Open), CSci, CPhys, MInstP, MRAeS\end{footnotesize}}
+
+\section{Contact Information}
+\newlength{\rcollength}\setlength{\rcollength}{2in}%
+%
+\begin{tabular}[t]{@{}p{\textwidth-\rcollength}p{\rcollength}}
+55 Selvage Street 	& \textit{Voice:} +44 (0)1383 415710 \\
+Rosyth				& \textit{Mobile:} +44 (0)7702 072652 \\
+DUNFERMLINE			& \textit{Fax:} +44 (0) 7092 122106 \\
+Fife, KY11 2QE 		& \textit{E-mail:} \href{mailto:nick@cullaloe.com}{nick@cullaloe.com}\\
+Scotland 			& \textit{www:} \url{http://cullaloe.com/}\\
+\end{tabular}
+
+\section{Citizenships}
+Great Britain, United States of America.
+
+\section{Education}
+%
+{\textbf{Edinburgh University}, Moray House School of Education}
+\begin{outerlist}
+
+\item[] PGCE (Secondary), July 2004
+        \begin{innerlist}
+        \item \textit{Subjects}: Physics and Mathematics.
+        \end{innerlist}
+
+\end{outerlist}
+
+\blankline
+
+{\textbf{The Open University}}, Milton Keynes
+\begin{outerlist}
+
+\item[] B.Sc. (Hons), November 2002
+        \begin{innerlist}
+        \item Upper Second Class Honours
+%        \item \textit{Courses}: Mathematics, Physics, Astronomy \& Planetary Science, Mathematical Modelling \& Methods, Space, Time and Cosmology, Artificial Intelligence, Images \& Information, Electromagnetism, Quantum Mechanics, the Energetic Universe
+        \end{innerlist}
+
+\end{outerlist}
+%
+%\blankline
+%
+%{\textbf{Letchworth Grammar School}}, Letchworth
+%\begin{outerlist}
+%
+%\item[] GCSE 'O' Levels, May 1974
+%        \begin{innerlist}
+%        \item Maths, English, Physics, Chemistry, French, Technical Drawing, Metalwork
+%        \end{innerlist}
+%
+%\end{outerlist}
+
+\section{Professional Qualifications} 
+%
+\textbf{The General Teaching Council for Scotland}
+\begin{innerlist}
+\item Full Registration (Mathematics), April 2006
+\item Full Registration (Physics with Science), July 2005 
+\end{innerlist}
+
+\blankline
+
+\textbf{The Science Council}% (with The Institute of Physics)
+\begin{innerlist}
+\item Chartered Scientist (CSci), July 2004
+\end{innerlist}
+
+\blankline
+
+\textbf{The Institute of Physics}
+\begin{innerlist}
+\item Member (MInstP), July 2003
+\item Chartered Physicist (CPhys), July 2003
+\end{innerlist}
+
+\blankline
+
+\textbf{The Microsoft Corporation}
+\begin{innerlist}
+\item MCSD Charter Member, 1999
+\item Microsoft Certified Solution Developer (MCSD), June 2001
+%
+%Windows Architecture, Programming with Visual Basic (VB) 4.0, Access 95 \& Developers Toolkit, Analyzing Requirements and Defining Solution Architectures, Designing and Implementing Desktop Applications with VB 6.0, Distributed Applications with VB 6.0, Databases with SQL Server 7.0.
+\end{innerlist}
+
+\blankline
+
+\textbf{The Securities Institute}
+\begin{innerlist}
+\item Introduction to Securities and Investment, January 2000
+%
+%Financial Services in the UK Economy, Regulatory background to the Financial Services Industry, Securities, Derivatives, Investment vehicles \& personal finance, Securities \& Derivatives markets in the UK, Implications of being a shareholder, Financial Planning.
+\end{innerlist}
+
+\blankline
+
+\textbf{The Royal Aeronautical Society}
+\begin{innerlist}
+\item Corporate Member (MRAeS), August 1999
+\end{innerlist}
+%
+%\section{Publications}
+%%
+%Pavlic, T.P., and K.M.~Passino. Submitted. Foraging Theory for Mobile
+%Agent Speed Choice. \href{http://www.elsevier.com/locate/engappai}
+%                         {Engineering Applications of Artificial
+%                         Intelligence}.
+%
+%\section{Books in Preparation}
+%%
+%Pavlic, T.P., B.W.~Andrews, K.M.~Passino, and T.A.~Waite. Foraging
+%Theory for Engineering.
+%
+%\section{Conference Publications}
+%%
+%Freuler, R.J., M.J.~Hoffmann, T.P.~Pavlic, J.M.~Beams, J.P.~Radigan,
+%P.K.~Dutta, J.T.~Demel, and E.D.~Justen. 2003. Experiences with a
+%Comprehensive Freshman Hands-On Course -- Designing, Building, and
+%Testing Small Autonomous Robots. Proceedings of the 2003
+%\href{http://www.asee.org/}{American Society for Engineering Education}
+%Annual Conference \& Exposition.
+
+\section {Other Qualifications}
+
+\textbf{Tayside Aviation}
+\begin{innerlist}
+\item JAR Private Pilots Licence (Aeroplanes), July 2000
+\item CAA Radio Operators Licence, January 1999
+\end{innerlist}
+
+\section {Decorations}
+\begin{innerlist}
+\item Rhodesia Medal (UK), 1980
+\item Independence Medal (Zimbabwe), 1980
+\end{innerlist}
+
+\section{Professional Service} 
+
+\textbf{The Institute of Physics in Scotland}
+\begin{innerlist}
+\item Member, Education Committee
+        \hfill \textbf{February 2010 to date}
+\item Member, IoP in Scotland Committee
+        \hfill \textbf{September 2011 to October 2013}
+\end{innerlist}
+\textbf{NASUWT}
+\begin{innerlist}
+\item Health and Safety representative, Fife
+        \hfill \textbf{March 2010 to Sep 2011}
+\item President, Fife Branch
+        \hfill \textbf{March 2011 to Sep 2011}
+\end{innerlist}
+
+\newpage
+\section{Professional Experience}
+%
+\textbf{Edinburgh University}, Institute for Education, Teaching and Leadership
+
+Initial Teacher Education
+
+\begin{outerlist}
+
+\item[] \textit{Teaching Fellow}%
+        \hfill \textbf{August 2012 to date}
+\begin{innerlist}
+\item Seconded to ITE to run the PGDE Secondary Physics programme. Contributing to PGDE Secondary General Science, PGDE Primary Science and BEd Science, personal tutoring, CPD and other academic, professional and consultative work.
+\end{innerlist}
+
+\end{outerlist}
+
+\blankline
+
+%
+\textbf{Al Muhandis}, Rosyth, Fife
+
+Sole trader business providing consultancy and technical services.
+
+\begin{outerlist}
+
+\item[] \textit{Proprietor, Technical Architect, Service Provider}%
+        \hfill \textbf{April 2002 to date}
+\begin{innerlist}
+\item Internet Service Provider to businesses, technical consultancy and training services to various client organisations. Developing and maintaining bespoke websites for businesses and public sector, including professional and special interest communities. Developed websites for use in education. Development of integrated e-commerce solutions. Consultancy and training in channels for communication using social media for organisations. Portfolio at \href{http://cullaloe.hostinguk.org}{cullaloe.net}.
+\item Skill set includes: Technical training, software development, design, architecture, Microsoft Visual Basic (VB), .NET, HTML, XML, Atom, RSS, VSS, XSLT, SQL Server, ASP and ASP.NET, Dreamweaver MX, php, MySQL, LAMP, Ajax, Linux, Centos, Apache, OSX, analytics, metrics.
+\end{innerlist}
+
+\end{outerlist}
+
+\blankline
+
+%
+\textbf{Fife Regional Council}, Education Service
+
+Scottish Regional Council Educational Authority
+
+\begin{outerlist}
+
+\item[] \textit{Teacher of Physics and Mathematics}\\Kirkcaldy High School (roll: 1000)%
+        \hfill \textbf{April 2010 to July 2012}
+\begin{innerlist}
+\item I returned to Kirkcaldy after my secondment as PT Physics at Glenwood. %I had a full timetable of Physics from S1 Science to Advanced Higher and provided support for pupils at all levels. 
+\end{innerlist}
+
+\item[] \textit{Principal Teacher, Physics}\\Glenwood High School (roll: 1000)%
+        \hfill \textbf{May 2008 to April 2010}
+\begin{innerlist}
+\item Head of Department of 3 (3.0 FTE) staff.
+\item Responsible for academic attainment in Physics and Science.
+\item Responsible for planning and provision of courses from P6 (Science outreach) to S6 (AH).
+\item Responsible for resources planning and management.
+\item Responsible for staff development and management.
+\item Responsible for department and ad hoc budgets.
+\item Developed use of new media to support learning.
+\item Contributed to the development of the new revised Higher.
+\item Extensive CPD portfolio including assessment instrument development, consulting on the development and use of wikis and other online resources, and organisation of \href{http://teachingphysics.pbwiki.org/}{networking events} and a national conference in March 2009. %My current CPD Log can be found online at \href{http://mrhood.net/CPDLog}{http://mrhood.net/CPDLog}.
+\end{innerlist}
+
+\item[] \textit{Teacher of Physics and Mathematics}\\Kirkcaldy High School (roll: 1200)%
+        \hfill \textbf{August 2005 to April 2008}
+\begin{innerlist}
+\item Responsible for academic attainment in Physics and Mathematics.
+\item Member of the Physics department of four staff within the science faculty and the Mathematics department of about 8 FTE.
+\item Involved in course and ICT resource development and cross-curricular work.
+\item Published articles in the TESS on violence in school.
+\item Achieved the GTCS Standard for Full Registration in Mathematics.
+\item Created my own \href{http://www.mrhood.co.uk/}{online learning and revision resource}.
+\item Extensive CPD portfolio including Leadership training, engagement with new media initiatives, presentations at the Scottish Learning Festival 07 and TeachMeet 08.
+\end{innerlist}
+
+\end{outerlist}
+\blankline
+
+\section{Professional Experience (continued)}
+
+\begin{outerlist}
+\item[] \textit{Teacher of Physics and Mathematics (Probationer)}\\Buckhaven School, Leven (roll: 1100)%
+        \hfill \textbf{August 2004 to July 2005}
+\begin{innerlist}
+\item Responsible for academic attainment in Physics and Mathematics.
+\item Team member of a department of four staff within the science faculty.
+\item Achieved the GTCS Standard for Full Registration in Physics.
+\item Implemented a collaborative Science Liaison Project with Torryburn Primary.
+\item Additional teaching in IT, enterprise and motivation.
+\end{innerlist}
+
+\end{outerlist}
+
+\blankline
+
+\textbf{Cullaloe Project Resource Limited}, Cowdenbeath, Fife KY4 9QU
+
+An independent software house specialising in software development for clients including the Greater Glasgow \& Clyde Valley Tourist Board, the Scottish Centre for Infection \& Environmental Health, Deutsche Bank, Bull, ICL and Aspentech. Turnover up to \pounds100K p.a. In the last five years with this Company, turned it from a simple IT contractor into a quality supplier of bespoke solutions and products.
+
+\begin{outerlist}
+
+\item[] \textit{Director}%
+        \hfill \textbf{February 1997 -- July 2003}
+\begin{innerlist}
+\item Established the Company and built up its reputation for quality and good value by working with clients to meet their objectives in a professional manner. Designed and developed software solutions to time and budget constraints. Trained and developed the Company’s and Client’s personnel in technical and project management skills. Acted as expert consultant in external reviews of software development projects.
+
+\item Delivered solutions on fixed-price and cost plus basis in Health, Tourism, IT, Insurance, Engineering and Finance sectors using a range of platforms and languages.
+
+\item Skill set: Business, project and technical Management, Microsoft Visual Basic (VB), HTML, XML, XSLT, SQL Server, Access, Java and ASP scripting, Dreamweaver, Flash, C/C++ and Windows Operating Systems.
+\end{innerlist}
+
+\end{outerlist}
+
+
+\blankline
+
+\textbf{GEC Marconi Simulation and Training}, Dunfermline, Fife KY11 5JZ
+
+A specialist division of Marconi, part of the GEC group of Companies. During almost five years here, I held key management and technical positions around the world.
+
+\begin{outerlist}
+
+\item[] \textit{Senior Software Engineer}%
+        \hfill \textbf{February 1996 -- February 1997}
+\begin{innerlist}
+\item Produced Costed Tenders for Connah’s Quay Power Station and AS90 and Warrior OPV Military Vehicle Simulators, up to \pounds12.5 Million value. Conducted a feasibility study to implement a new internal integrated IT system (MECCA/MARCAS). Produced the Unit Business Training Plan and Budget, and detailed proposals for base/mobile technology demonstration facilities.
+
+\item Skill set: Project Management, technical team management and commercial management.
+
+\end{innerlist}
+
+\item[] \textit{Project Manager}\\Military Operations Division%
+        \hfill \textbf{October 1995 -- February 1996}
+\begin{innerlist}
+\item Produced GUI application for auto-generation of \textit{C} source code for model initialisation and simulation database cross-checking; Developed Fault Injection package; Developed real-time plant object models; Designed and produced developers’ toolkit for real-time parameter display/manipulation.
+
+\item Skill set: Microsoft VB 4.0, Access SQL, C/C++, Visual Source Safe, Windows NT3.51.
+\end{innerlist}
+\newpage
+
+\section{Professional Experience (continued)}
+
+\item[] \textit{Data Control Manager}, Shajiao , \textit{C} Power Station\\People's Republic of China%
+        \hfill \textbf{August 1995 -- October 1995}
+\begin{innerlist}
+\item Introduced Software Configuration and Engineering Control Schemes, resolved a difficult customer situation by solving observation tracking problems, recovered the schedule, secured level 2 customer acceptance of the \pounds1.2 Million training device and enabled training to support handover of the power station to the clients.
+
+\item Skill set: Project Management, customer diplomacy and technical liaison, technical team management and commercial management.
+\end{innerlist}
+
+\item[] \textit{Project Manager}\\Military Operations Division%
+        \hfill \textbf{December 1993 -- August 1995}
+\begin{innerlist}
+\item Produced costed technical proposals and rationale for the \pounds2.5 Million Warrior OPV military vehicle simulator. Championed and Managed the introduction of a new internal Life Cycle Management System. Project Managed the design and build of a \pounds1.5 Million Sea King HAR Mk3A Radar Crew Trainer for the MoD.
+
+\item Skill set: Project Management, technical team management and commercial management.
+\end{innerlist}
+
+\item[] \textit{Bid Manager}\\Military Operations Division%
+        \hfill \textbf{December 1992 -- December 1993}
+\begin{innerlist}
+\item Produced costed tenders for the \pounds1.2 Million CATT Feasibility Study, AFV Turret Trainers for Kuwait, the \pounds 1.5 Million Sea King HAR Mk3A Radar Crew Trainer and the Sea Harrier FRS.2 Maintenance Trainer for the MoD.
+
+\item Skill set: Project Management, technical team management and commercial management.
+
+\end{innerlist}
+
+\item[] \textit{Business Development Manager}\\Business Development Division%
+        \hfill \textbf{July 1991 -- December 1992}
+\begin{innerlist}
+\item Created Business Plan for Flight Simulation Sector entry, Identified \pounds5M prospects to support the business case and managed Marketing and Business Development Activity in Flight/Visuals Sector.
+
+\item Skill set: Project Management, technical and commercial team management.
+\end{innerlist}
+
+\end{outerlist}
+
+
+\blankline
+
+\textbf{IMACS (UK) Limited}, Worthing, West Sussex BN11 1HW
+
+A specialist supplier of scientific technical staff to the Flight Simulation Industry.
+
+\begin{outerlist}
+
+\item[] \textit{Commercial Manager}%
+        \hfill \textbf{February 1990 -- May 1991}
+\begin{innerlist}
+\item Produced 5-year Business Plan. Developed US Partner agreement terms for the supply of scientific staff. Conducted Business Development Initiatives including the Queen’s Award for Export and quality initiatives including AQAP 1/13. Initiated Utilities Sector Marketing Activities. Negotiated Client Agreement renewal and terms for scientific staff supply to \pounds 200K value. Managed Office, Admin Staff and Facility including Landlord/Tenant contracts. Introduced new MIS/IT Systems and Practices.
+
+\item Skill set: Commercial and staff management.
+
+\end{innerlist}
+
+\end{outerlist}
+
+\blankline
+
+\textbf{Aviation Resources Limited}, Billingshurst, West Sussex RH14 0YL
+
+UK Office of a US manufacturer of Flight Simulators.
+
+\begin{outerlist}
+
+\item[] \textit{Technical Director}%
+        \hfill \textbf{March 1989 -- February 1990}
+\begin{innerlist}
+\item Set up UK office. Established Procedures, Payroll, Accounting and Operations. Conducted Technical Survey of Lear Jet Flight Simulator. Recruited and assigned Technical Staff to US and European requirements.
+
+\item Skill set: Commercial and technical management.
+
+\end{innerlist}
+
+
+\end{outerlist}
+
+
+\blankline
+
+\newpage
+\section{Professional Experience (continued)}
+\textbf{British Aerospace Simulation Limited}, Weybridge, Surrey KT13 0SF
+
+Supplier and manufacturer of Flight Simulators \& training equipment with \pounds 25M turnover.
+
+\begin{outerlist}
+
+\item[] \textit{Chief Project Manager -- \\Civil Aircraft Projects}%
+        \hfill \textbf{September 1988 -- March 1989}
+\begin{innerlist}
+\item Managed Programmes for Jetstream J31 and BAe 146-200/300 Phase II Full Flight Simulators (FFS) for BAe, Washington; Advanced Turboprop (ATP) Phase II FFS for BAe, Woodford; \& BAe146 Cockpit Procedures Trainer for BAe Hatfield. Conducted Business Development within BAe and European Civil Markets. Oversaw Major Sub-Contractor Proposal Specification and assessment. Provided Technical Consultancy for US Manufacturer Reflectone, Inc., during acquisition by BAe.
+
+\item Skill set: Commercial, Programme and technical management.
+
+\end{innerlist}
+
+\end{outerlist}
+
+\blankline
+
+\textbf{IMACS (UK) Limited}, Worthing, West Sussex BN11 1HW
+
+A specialist supplier of scientific technical staff to the Flight Simulation Industry.
+
+\begin{outerlist}
+
+\item[] \textit{Consultant}%
+        \hfill \textbf{February 1986 -- September 1988}
+\begin{innerlist}
+\item Assigned to several Rediffusion Simulation projects. Managed Visual Systems Projects from Bid to Acceptance for Flight Simulator Visual Systems, each worth about £1.5 Million, for Concorde (British Airways); B737, B747 and A320s (BA, Lufthansa, KLM and SIA) and Jetstream (BAe) aircraft. Performed dual role of Project Manager and Design Engineer on the Boeing B757/767 Maintenance Trainer update in Seattle. Designed the Autobrakes \& Secondary Flight Controls Systems for a DC10-30 Cockpit Procedures Trainer.
+
+\item Skill set: Project management, FORTRAN 77, Gould-SEL32, MPX3.2, Assembler.
+
+\end{innerlist}
+
+\end{outerlist}
+
+\blankline
+
+\textbf{Rediffusion Simulation Limited}, Crawley, West Sussex RH10 2RL
+
+A manufacturer of Flight Simulators and Training Devices.
+
+\begin{outerlist}
+
+\item[] \textit{Project Manager}%
+        \hfill \textbf{February 1985 -- February 1986}
+\begin{innerlist}
+\item Project Managed the TWA B767 Flight Test Update in Kansas City and the JAL B767 Site installation in Tokyo to achieve the first JCAB approval to FAA phase II equivalent for flight crew training.
+
+\item Skill set: Project and technical team management.
+
+\end{innerlist}
+
+\item[] \textit{Systems Design Engineer}%
+        \hfill \textbf{August 1981 -- February 1985}
+\begin{innerlist}
+\item Designed and implemented Real-Time Simulation of: Fuel, Electrics, EICAS/WEU, Anti-ice, Fire D\&E, Hydraulics, Landing Gear, Secondary Flight Controls and related systems in several aircraft types including B737, DC-10, L1011 and B1-B.
+
+\item Skill set: FORTRAN77, Assembler, JCL \& GENESIS in GOULD-SEL32 RTM \& MPX.
+
+\end{innerlist}
+
+\end{outerlist}
+
+
+\blankline
+
+\textbf{Self-employed}, London
+
+\begin{outerlist}
+
+\item[] \textit{Freelance Sales Consultant}%
+        \hfill \textbf{October 1980 -- August 1981}
+\begin{innerlist}
+\item Operated a sales portfolio for Liberty Life Assurance, Shipton Communications, A1 Business Machines and the Transform Clinic, Harley Street.
+
+\end{innerlist}
+
+\end{outerlist}
+
+\blankline
+
+\newpage
+\section{Professional Experience (continued)}
+\textbf{Army}
+
+\begin{outerlist}
+
+\item[] \textit{Royal Electrical and Mechanical Engineers}%
+        \hfill \textbf{April 1976 -- October 1980}
+\begin{innerlist}
+\item \textbf{Rank on leaving:} Corporal
+\item \textbf{Trade:} Avionics Technician
+\item Exemplary military record of service in UK, Canada, Europe and Africa.
+\item Skill set: Avionic Systems of Westland Scout, Gazelle, Lynx and DeHavilland Beaver.
+
+\end{innerlist}
+
+\end{outerlist}
+
+\blankline
+
+\textbf{Wilbury Hotel}, Letchworth, Hertfordshire
+
+\begin{innerlist}
+
+\item[] \textit{bar / cellarman}%
+        \hfill \textbf{October 1975 -- April 1976}
+\begin{innerlist}
+\item Worked the bars of this busy hotel, learning the trade and eventually running the day-to-day activities in the bar and cellar.
+
+\item Skill set: People, stock and cellar management.
+
+\end{innerlist}
+
+\end{innerlist}
+
+
+\blankline
+
+\textbf{C. Hartley and Sons (China \& Glass) Ltd}, Letchworth, Hertfordshire
+
+\begin{innerlist}
+
+\item[] \textit{Driver/storeman}%
+        \hfill \textbf{May 1975 -- October 1975}
+\begin{innerlist}
+\item Delivery driver, stockman.
+
+\item Skill set: People, stock handling and driving.
+
+\end{innerlist}
+
+\end{innerlist}
+
+\blankline
+
+\textbf{Jones Cranes Limited}, Letchworth, Hertfordshire
+
+\begin{innerlist}
+
+\item[] \textit{Sales Liaison Officer}%
+        \hfill \textbf{May 1974 -- May 1975}
+\begin{innerlist}
+\item Administration and office duties supporting field sales representatives across the UK and world-wide. Preparation of quotations, letter-writing and sales statistics preparation.
+
+\item Skill set: Commercial mathematics, letter writing, internal and external customer liaison.
+
+\end{innerlist}
+
+\end{innerlist}
+
+\blankline
+
+\section{Public Service}
+%
+\textbf{Forth Valley Branch of the Pony Club}, Central Scotland
+
+A youth organisation affiliated to the British Horse Society which promotes good citizenship and develops young people through the care and responsible ownership of horses.
+
+\begin{outerlist}
+
+\item[] \textit{District Commissioner}%
+        \hfill \textbf{November 1994 -- June 1997}
+
+\end{outerlist}
+
+\blankline
+
+\textbf{Fife Region Children's Panel}, Scotland
+
+The Scottish system for dealing with children in trouble, either as offenders or victims. Has powers to deals with both, from dismissal to detention.
+
+\begin{outerlist}
+
+\item[] \textit{Member, Chairman}%
+        \hfill \textbf{May 1993 -- March 1996}
+
+\end{outerlist}
+
+\section{Publications}
+I occasionally have articles published in the Times Educational Supplement. In 1988, I published a paper in Seattle, Washington on ``The Principal Officers and their Stations''. In 1994, my poem ``Keen the eye'' was included in an anthology of international poetry published in the USA. I maintain a web presence through \textit{inter alia} \href{http://cullaloe.com/}{http://cullaloe.com/} and \href{http://mrhood.net/}{http://mrhood.net}. I have published a number of text, audio and video blogs and podcasts. 
+
+\section{Personal Profile}
+I am interested in good music and dance; the Internet; science, mathematics and education. I like animals and have experience of showing dogs and equestrianism (show jumping, cross-country and dressage). I like aviation, especially flying. I have been a member of Mensa for over 30 years. I play the guitar and have sung choral works from Mozart to Bernstein. I am learning to play the piano. I like children. I am a member of a health club and keep reasonably fit in the gym and relax in the pool. I have lectured on Masonic Symbolism in England and the USA. I like archery for relaxation. I like sporting achievement and keep an eye on the British Biathlon. I don't go to the theatre as often as I'd like. I read as much as I can and write a little.
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
