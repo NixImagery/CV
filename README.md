@@ -9,6 +9,6 @@ The current version of the cv.pdf document is available on my LinkedIn and at ht
 
 Feedback welcome. Offers of work, maybe even more so.
 
-Nick Hood
-http://cullaloe.com
+Nick Hood  
+http://cullaloe.com  
 @cullaloe
