@@ -1,0 +1,362 @@
+\documentclass[10pt]{article}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\reversemarginpar
+\usepackage[paper=a4paper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=28.5mm,    % Length of section titles
+            marginparsep=1.5mm,       % Space between titles and text
+            margin=20mm,              %  margins
+            includemp]{geometry}
+\setlength{\parindent}{0in}
+\usepackage{paralist}
+\usepackage{fancyhdr,lastpage}
+\usepackage{mdwlist} % starred lists are more compact
+\pagestyle{fancy}
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage}
+                    \hfill \,}}
+% Finally, give us PDF bookmarks
+\usepackage{color,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+%%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The title (name) with a horizontal rule under it
+%
+% Usage: \makeheading{name}
+%
+% Place at top of document. It should be the first thing.
+\newcommand{\makeheading}[1]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+                {\large \bfseries #1}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{1pt}%
+         \end{minipage}}
+
+\renewcommand{\section}[2]%
+        {\pagebreak[2]\vspace{1.3\baselineskip}%
+         \phantomsection\addcontentsline{toc}{section}{#1}%
+         \hspace{0in}%
+         \marginpar{
+         \raggedright \scshape #1}#2}
+
+% An itemize-style list with lots of space between items
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1]}{\end{itemize}%
+         \vspace{-.6\baselineskip}}
+
+% An environment IDENTICAL to outerlist that has better pre-list spacing
+% when used as the first thing in a \section
+\newenvironment{lonelist}[1][\enskip\textbullet]%
+        {\vspace{-\baselineskip}\begin{list}{#1}{%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+
+% An itemize-style list with little space between items
+\newenvironment{innerlist}[1][\enskip\textbullet]%
+        {\begin{compactitem}[#1]}{\end{compactitem}}
+
+% To add some paragraph space between lines.
+% This also tells LaTeX to preferably break a page on one of these gaps
+% if there is a needed pagebreak nearby.
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\makeheading{Nicholas (Nick) R. Hood {\footnotesize BSc (Hons)(Open), MRAeS, MInstP, CPhys, CSci \hfill  \href{mailto:nick@cullaloe.com}{nick@cullaloe.com}\\
+102 Parkside Street, Rosyth, Fife, KY11 2LT \hfill +44 (0)7702 072652}}
+
+% = = = = = = = = = = = = = = =
+\section{Synopsis}
+% = = = = = = = = = = = = = = =
+An innovative and solutions-focused educator and technologist with extensive international experience in aerospace and defence. A GTCS registered teacher of physics and mathematics, I have in recent years led the development and delivery of high quality initial teacher education in science at the University of Edinburgh.
+
+% = = = = = = = = = = = = = = =
+\section{Profiles}
+% = = = = = = = = = = = = = = =
+\href{uk.linkedin.com/in/cullaloe}{uk.linkedin.com/in/cullaloe \hfill \includegraphics[width=2cm]{LinkedIn}}
+
+\href{https://about.me/cullaloe}{about.me/cullaloe \hfill \includegraphics[width=2cm]{aboutme}}
+
+% = = = = = = = = = = = = = = =
+\section{Education}
+% = = = = = = = = = = = = = = =
+{\textbf{Edinburgh University}, Moray House School of Education}
+\begin{innerlist}
+	\item PGCE (Secondary: Physics and Mathematics), July 2004
+\end{innerlist}
+
+{\textbf{The Open University}}, Milton Keynes
+\begin{innerlist}
+	\item B.Sc. (Hons), November 2002
+\end{innerlist}
+
+% = = = = = = = = = = = = = = =
+\section{Qualifications}
+% = = = = = = = = = = = = = = =
+%\section{Professional Qualifications}
+%
+\textbf{The General Teaching Council for Scotland}
+\begin{innerlist}
+\item Full Registration: \textbf{Physics with Science}, July 2005; \textbf{Mathematics}, April 2006
+\end{innerlist}
+
+\textbf{The Science Council}% (with The Institute of Physics)
+\begin{innerlist}
+\item Chartered Scientist (CSci), July 2004
+\end{innerlist}
+
+\textbf{The Institute of Physics}
+\begin{innerlist}
+\item Member (MInstP), Chartered Physicist (CPhys), July 2003
+\end{innerlist}
+
+\begin{wrapfigure}{r}{0.2\textwidth}     \includegraphics[width=0.2\textwidth]{MCSD_logo}\end{wrapfigure}
+
+\textbf{The Microsoft Corporation}
+\begin{innerlist}
+\item MCP Charter Member, 1999
+\item Microsoft Certified Solution Developer, June 2001
+\end{innerlist}
+
+\textbf{The Royal Aeronautical Society}
+\begin{innerlist}
+\item Corporate Member (MRAeS), August 1999
+\end{innerlist}
+
+% = = = = = = = = = = = = = = =
+\section{Professional Experience}
+% = = = = = = = = = = = = = = =
+
+\textbf{Edinburgh University}, Moray House       \hfill \textbf{August 2016 to date}
+
+\begin{outerlist}
+
+\item[] \textit{Senior Teaching Fellow in Secondary Education (Physics Specialist)} Responsible for academic and professional development of teachers of science in Secondary and Primary sectors. Science strand leader for Primary PGDE and MA Science. Development and delivery of the Science programmes for Primary undergraduate MA and Post-Graduate Masters in Initial Teacher Education. Assessment of academic and professional competence through in-school observation, tuition and written assignments. Leadership of teaching and support staff across programmes.
+
+\end{outerlist}
+
+% = = = = = = = = = = = = = = =
+\section{}
+% = = = = = = = = = = = = = = =
+\textbf{cullaloe.net} \textit{trading as Al Muhandis}, Fife        \hfill \textbf{April 2003 to date}
+
+\begin{outerlist}
+\item[]Technical services consultancy. Recent (since 2012) projects include:
+
+\begin{innerlist}
+  \item Built several Artificial Intelligence games solvers using neural networks, AC-3 and BTS algorithms.
+  \item Designed and implemented a responsive virtual learning environment (VLE) for PGDE students.
+	\item Designed, built and operated the award-winning \href{http://sptr.net}{sptr.net} which provided a resource and support base for those teaching Physics in Scotland.
+	\item Designed and built the \href{http://naturalpartnersproject.org/}{naturalpartnersproject.org} web showcase for STEM projects in connection with the University of Edinburgh and the Forestry Commission.
+	\item Designed, built and operated \href{http://iopscompetition.org.uk/}{iopscompetition.org.uk}, a website for national physics competitions the Higgs Boson competition (2014) and Reflections on Light (2016)
+	\item Hosting several community and business websites at \href{http://cullaloe.net}{cullaloe.net}.
+	\item Unix server administration on shared hosting and VPS including configuration, upgrade, extension and scripting of tools.
+\end{innerlist}
+\end{outerlist}
+
+\blankline
+%
+\newpage
+% = = = = = = = = = = = = = = =
+\section{Professional Experience (continued)}
+% = = = = = = = = = = = = = = =
+\textbf{Edinburgh University}, Moray House       \hfill \textbf{August 2012 to August 2016}
+
+\begin{outerlist}
+
+\item[] \textit{Teaching Fellow} seconded to lead and develop the PGDE Secondary Physics and General Science programme. Responsible for academic and professional development of teachers of science in Secondary and Primary sectors. Science strand leader for Primary PGDE, BEd and MA. Developed and delivered UG MA Primary Science programme. Assessment of academic and professional competence through in-school observation, tuition and written assignments. Active participation in several University and School projects including the Tom Conlon Memorial lecture series (2012 and 2014), facilities and digital technology groups.
+\end{outerlist}
+
+\blankline
+
+\textbf{Fife Regional Council}, Education Service
+     \hfill \textbf{August 2004 to July 2012}
+
+\begin{outerlist}
+\item[]
+\begin{innerlist}
+	\item Principal Teacher, Physics (Glenwood HS)
+	\item Teacher of Physics \& Mathematics (Kirkcaldy HS)
+	\item Teacher of Physics \& Mathematics (Probationer, Buckhaven HS)
+\end{innerlist}
+\end{outerlist}
+
+\blankline
+
+\textbf{Cullaloe Project Resource Ltd}        \hfill \textbf{February 1997 -- July 2003}
+
+\begin{outerlist}
+\item[] Technology and education consultancy. Client portfolio included:
+
+\begin{outerlist}
+
+\item \textbf{The Scottish Centre for Infection \& Environmental Health}:		Designed and built the medical reporting system ECOSS using an innovative application of SQL extraction as XML and XSLT transforms. Designed and built the Quick Response (GP Medical) Surveillance System QRSS using SQL/MAPI. Delivered training and documentation for users and support staff.
+\item \textbf{Purves Plant Hire}: Design specification for plant tracking/scheduling database application using NT4, Access, Windows 2000
+\item \textbf{West Lothian Council}: Conversion of Pagemaker 6.5 forms to dynamic pdf forms
+\item \textbf{Scarlet Training}: Contract trainer, delivering courses on HTML 4 (Intro and mastering), Java programming, Dreamweaver 4/UltraDev, Adobe PDF programming, Microsoft Mastering VB6 series (Fundamentals, Development, Enterprise, Web App Development), MOC833 SQL Server 7
+\item \textbf{LearningIT}: Contract trainer, delivering courses in advanced HTML, CSS, Javascript, Java programming, Java for C programmers
+\item \textbf{Aspentech}: Design analysis \& report, Heysham 2 Process Plant Simulation upgrade
+\item \textbf{Greater Glasgow \& Clyde Valley Tourist Board}: Design and implementation of the visitor information and accommodation booking system website using SQL Server, NT4/IIS, ASP, XLS/XSLT, Javascript, dynamic HTML
+\item \textbf{Deutsche Bank}:	Design and development of Private Clients Investment management system using Access/VB6/NT/Win2K
+\item \textbf{Bull}: Design and development of Kwik-Fit Insurance call centre suite using Graham Technologies GT-X system, VB6/NT
+\item \textbf{ICL}: Systems update (Millennium Bug) for tools and utilities using VB4/SQL
+\item \textbf{Anglian Water}: Support and programming for systems roll-out: VB4/W98/2K/NT
+
+\end{outerlist}
+\end{outerlist}
+
+
+\blankline
+
+\textbf{GEC Marconi Simulation and Training}        \hfill \textbf{July 1991 -- February 1997}
+
+\begin{outerlist}
+
+\item[] \textit{Senior Software Engineer}%
+\begin{innerlist}
+\item GUI application development for auto-initialisation code generation in \textit{C}
+\item Designed and coded a fault injection package, real-time process plant simulation models and a developer's toolkit for real-time parameter display
+\end{innerlist}
+
+\item[] \textit{Data Control Manager}, Shajiao \textit{C} Power Station
+
+\item[] \textit{Bid/Project Manager - Military Operations}: including Connah's Quay Power Station simulator; AS 90 and Warrior OPV military vehicle simulator; Sea King HAR Mk3A Radar Crew Trainer.
+\end{outerlist}
+%
+
+\newpage
+% = = = = = = = = = = = = = = =
+\section{Professional Experience (continued)}
+% = = = = = = = = = = = = = = =
+\blankline
+
+\textbf{IMACS (UK) Limited}, Worthing        \hfill \textbf{February 1990 -- May 1991}
+
+\begin{innerlist}
+
+\item[] \textit{Commercial Manager}%
+
+\end{innerlist}
+
+\blankline
+
+\textbf{Aviation Resources Limited}, West Sussex        \hfill \textbf{March 1989 -- February 1990}
+
+\begin{innerlist}
+\item[] \textit{Technical Director}
+\end{innerlist}
+
+\blankline
+
+\textbf{British Aerospace Simulation Ltd}, Weybridge        \hfill \textbf{Sept 1988 -- March 1989}
+
+\begin{innerlist}
+
+\item[] \textit{Chief Project Manager -- Civil Aircraft Projects}%
+\begin{innerlist}
+\item Jetstream J31 and BAe 146 Phase II Full Flight Simulators (Washington)
+\item Advanced Turboprop (ATP) Phase II FFS (Woodford)
+\item BAe146 Cockpit Procedures Trainer (Hatfield)
+\item Business Development within BAe and European Civil Markets
+\item Technical Consultancy for Reflectone, Inc., during acquisition by BAe (Tampa)
+
+\end{innerlist}
+
+\end{innerlist}
+
+\blankline
+
+\textbf{IMACS (UK) Limited}, Worthing        \hfill \textbf{February 1986 -- September 1988}\\
+\textbf{Rediffusion Simulation Ltd}, Crawley        \hfill \textbf{August 1981 -- February 1986}
+
+\begin{outerlist}
+\item[] \textit{Project Manager}%
+	\begin{innerlist}
+	\item Visual Display Systems in Concorde, B737, B747, A320, BAe Jetstream Full Flight Simulators for BA, Lufthansa, KLM, SIA and British Aerospace
+	\item Boeing B757/767 Maintenance Trainer update (Seattle)
+	\item TWA B767 Flight Test Update (Kansas City)
+	\item JAL B767 FFS installation and JCAB approval (FAA Phase II) in Tokyo
+	\end{innerlist}
+
+\item[] \textit{Systems Design Engineer} % \hfill \textbf{August 1981 -- February 1985}
+	\begin{innerlist}
+	\item EICAS systems expert for the Boeing B757/767 Maintenance Trainer update
+	\item Designed and modelled the Autobrakes \& Secondary Flight Controls Systems for a DC10-30 Cockpit Procedures Trainer.
+	\item Designed and implemented real-time models of aircraft systems in B737, DC-10, L-1011 and B1-B Full Flight Simulators.
+	\end{innerlist}
+\end{outerlist}
+
+\blankline
+
+\textbf{Freelance Sales}, London
+\begin{innerlist}
+\item[] \textit{Life Assurance, Telecom and Medical}%
+        \hfill \textbf{October 1980 -- August 1981}
+\end{innerlist}
+
+\textbf{Army} (Royal Electrical and Mechanical Engineers)
+        \hfill \textbf{April 1976 -- October 1980}
+
+\textbf{Wilbury Hotel}, Letchworth, \textit{Bar / cellarman} \hfill \textbf{October 1975 -- April 1976}
+
+\textbf{C. Hartley and Sons}, Letchworth, \textit{Driver/storeman}  \hfill \textbf{May 1975 -- October 1975}
+
+\textbf{Jones Cranes Limited}, Letchworth, \textit{Sales Liaison Officer}      \hfill \textbf{May 1974 -- May 1975}
+
+% = = = = = = = = = = = = = = =
+\section{Public Service}
+% = = = = = = = = = = = = = = =
+\begin{innerlist}
+
+\item \textbf{District Commissioner, Forth Valley Branch of the Pony Club}
+
+This youth organisation affiliated to the British Horse Society promotes good citizenship and develops young people through the care and responsible ownership of horses. I led the branch in Central Scotland from November 1994 to June 1997.\\
+
+\item \textbf{Member of Fife Region Children's Panel}
+
+I served on this panel, which is the Scottish system for dealing with children in trouble, either as offenders or victims, from May 1993 to March 1996.
+
+\end{innerlist}
+
+% = = = = = = = = = = = = = = =
+\section {Other Qualifications}
+% = = = = = = = = = = = = = = =
+\begin{innerlist}
+\item JAR Private Pilots Licence (Aeroplanes), July 2000
+\item CAA Radio Operators Licence, January 1999
+\end{innerlist}
+
+% = = = = = = = = = = = = = = =
+\section {Decorations}
+% = = = = = = = = = = = = = = =
+\begin{innerlist}
+\item Rhodesia Medal (UK), 1980
+\item Independence Medal (Zimbabwe), 1980
+\end{innerlist}
+
+% = = = = = = = = = = = = = = =
+\section {References}
+% = = = = = = = = = = = = = = =
+Available on request.
+
+\section{End}
+
+\end{document}
