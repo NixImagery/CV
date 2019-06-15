@@ -1,0 +1,68 @@
+---
+layout: post
+title: Wordpress XML-RPC Attack
+date: 2014-07-10 15:25:21.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- code
+- Online
+- Technology
+tags:
+- attack
+- exploit
+- VPS
+- wordpress
+- XML-RPC
+meta:
+  _edit_last: '1'
+  _thumbnail_id: '1198'
+  _wpas_done_all: '1'
+  Views: '1284'
+  _publicize_facebook_user: https://www.facebook.com/cullaloe
+  _publicize_twitter_user: "@cullaloe"
+  dsq_thread_id: '2832857843'
+  _wpas_skip_5760912: '1'
+  _wpas_skip_7785584: '1'
+  _wpas_skip_7785591: '1'
+  _wpas_skip_7785599: '1'
+  _jetpack_related_posts_cache: a:1:{s:32:"8f6677c9d6b0f903e98ad32ec61f8deb";a:2:{s:7:"expires";i:1560203428;s:7:"payload";a:3:{i:0;a:1:{s:2:"id";i:351;}i:1;a:1:{s:2:"id";i:2063;}i:2;a:1:{s:2:"id";i:3377;}}}}
+author:
+  login: admin
+  email: admin@cullaloe.net
+  display_name: Nick
+  first_name: Nick
+  last_name: Hood
+permalink: "/blog/2014/07/10/wordpress-xml-rpc-attack/"
+---
+<p class="p1">This week, one of my sites, sptr.net, has been under a co-ordinated and sustained attack from what appears to be a botnet - a collective of several hundred virus-infected computers running Microsoft Windows. The attack comprises attempts to use the remote procedure call methods built into Wordpress to post unauthorised content.</p>
+<p class="p1"><strong>Detection</strong></p>
+<p class="p1">I was notified by one of my <a href="http://www.gotsitemonitor.com/" target="_blank">independent monitoring services</a> that the site was having trouble some time after the attack began. It appears that once triggered by the attacker, it takes a while for the command to spread to a significant number of infected machines - this is reasonable if you assume the greatest number of infected PCs is in the USA. The attack peaked around the middle of the day in Scotland, coincident with the switching on of computers as the sun moved East to West across the continental US. Although the server remained operational, it was struggling to continue to respond to requests in a reasonable time as the <a href="http://en.wikipedia.org/wiki/Central_processing_unit" target="_blank">CPU</a> usage soared way above 1000% of nominal maximum. A look at the top processes on the server showed that it was trying to keep things together:</p>
+<pre class="p1">  PID USER      PRI  NI  VIRT   RES   SHR S CPU% MEM%   TIME+  Command
+12345 xxxxxxx    20   0 55992 36080  7128 R 49.0  6.9  0:15.73 [see below]
+12346 xxxxxxx    20   0 56036 36124  7188 R 46.0  6.9  0:04.96 [see below]
+12347 xxxxxxx    20   0 55940 36076  7128 R 46.0  6.9  0:03.82 [see below]
+12349 xxxxxxx    20   0 55912 35908  6984 R 46.0  6.8  0:07.88 [see below]
+12340 xxxxxxx    20   0 55976 36116  7180 R 46.0  6.9  0:03.59 [see below]
+12342 xxxxxxx    20   0 55940 36064  7128 R 44.0  6.9  0:07.21 [see below]
+12341 xxxxxxx    20   0 55948 36140  7196 R 44.0  6.9  0:34.79 [see below]
+12343 xxxxxxx    20   0 55972 36248  7276 R 44.0  6.9  2:20.11 [see below]</pre>
+<p class="p1">The command attempted showed that it was an attack on a php script:</p>
+<pre class="p1">/usr/bin/php-cgi -c /var/www/vhosts/sptr.net/etc/php.ini</pre>
+<p class="p1"><strong>Further investigation</strong></p>
+<p class="p1">Looking at the server access logs identified the specific script targeted by the attacker, the machines and methodology involved. The range of IP addresses showed that the infected PCs were world-wide (in the sample below, India, Poland, Egypt, Thailand, Algeria, Brazil and Pakistan).</p>
+<pre class="p1">106.76.44.110 - - [10/Jul/2014:14:03:19 +0000] "POST /xmlrpc.php HTTP/1.1" 200 159 "-" "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)"
+194.50.157.187 - - [10/Jul/2014:14:03:34 +0000] "POST /xmlrpc.php HTTP/1.1" 200 159 "-" "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)"
+41.235.83.103 - - [10/Jul/2014:14:03:43 +0000] "POST /xmlrpc.php HTTP/1.1" 200 159 "-" "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)"
+171.6.204.105 - - [10/Jul/2014:14:03:54 +0000] "POST /xmlrpc.php HTTP/1.1" 200 159 "-" "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)"
+41.107.87.186 - - [10/Jul/2014:14:04:04 +0000] "POST /xmlrpc.php HTTP/1.1" 200 159 "-" "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)"
+179.186.51.47 - - [10/Jul/2014:14:04:06 +0000] "POST /xmlrpc.php HTTP/1.1" 200 159 "-" "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)"
+39.44.61.247 - - [10/Jul/2014:14:04:14 +0000] "POST /xmlrpc.php HTTP/1.1" 200 159 "-" "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)"</pre>
+<p class="p1"><strong>Mitigation</strong></p>
+<p class="p1">Restarting the <a href="http://en.wikipedia.org/wiki/Virtual_private_server" target="_blank">VPS</a> container made no difference. CPU usage remained very high. Installing<a href="https://wordpress.org/plugins/disable-xml-rpc/" target="_blank"> a plugin to disable XML-RPC in Wordpress</a> seemed to make things better, probably because of the response time improvement but as the day progressed, the attack seemed to abate and the server was coping better with CPU usage falling below 100% nominal maximum. The log sample above is from today, when the attacks have fallen to a few per minute instead of the hundreds per second on Tuesday. It looks like the botnet is learning that there are robust passwords on the system that will take too long to guess and is giving up.</p>
+<p class="p1"><strong>Brute force solution</strong></p>
+<p class="p1">I'm not happy with this constant knocking at my door, however, so have decided that I don't need a door there at all. Removing the target script doesn't directly affect the rate of attack, it changes the 200 response to a 404 (page not found), which is quickly delivered.</p>
+<pre class="p1">94.55.132.13 - - [10/Jul/2014:14:09:13 +0000] "POST /xmlrpc.php HTTP/1.1" 404 430 "-" "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)"</pre>
