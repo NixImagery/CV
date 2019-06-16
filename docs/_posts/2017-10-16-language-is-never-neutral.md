@@ -12,4 +12,4 @@ twitter_text: Language is never neutral.
 introduction: Thoughts on research findings in education.
 permalink: "/blog/2017/10/16/language-is-never-neutral/"
 ---
-Some thoughts on research findings in education that somehow become universal laws.
+A podcast recording with some thoughts on research findings in education that somehow become universal laws.
