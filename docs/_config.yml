@@ -43,5 +43,7 @@ links:
   - title: Contact
     url: /contact/
 
+include: ['_pages']
+
 # Exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']
