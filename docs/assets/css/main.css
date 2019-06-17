@@ -131,6 +131,8 @@ main{font-family:'Titillium Web','Helvetica Neue',Helvetica,sans-serif;font-weig
 .box-item .box-body p{margin:0 0 1.875rem;color:#c2c2c2;font-size:1.063rem;line-height:1.625rem}
 .box-item .box-body .tags a{height:1.875rem;line-height:1.625rem;color:#fff;padding:0 .625rem;border:1px solid #fff;border-radius:15px;display:inline-block;margin:0 .625rem .625rem 0;z-index:50;}
 .box-item .box-body .tags a:hover{color:#141414;background:#fff;border-color:#fff}
+.box-item .box-body .categories a{height:1.875rem;line-height:1.625rem;color:#fff;padding:0 .625rem;border:1px solid #fff;border-radius:15px;display:inline-block;margin:0 .625rem .625rem 0;z-index:50;}
+.box-item .box-body .categories a:hover{color:#141414;background:#fff;border-color:#fff}
 .box-item .box-body .new-post:after{content:'New post';text-transform:uppercase;display:inline-block;background:#ff0a16;color:#fff;font-size:.813rem;font-weight:700;line-height:1.5rem;padding:0 .5rem;position:absolute;margin-top:-2.187rem}
 .box-item .box-body .cover{position:relative;}
 .box-item .box-body .cover a:before{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);opacity:0;background-color:rgba(0,0,0,0.7);background-image:url("../../assets/img/icons/read.svg");background-size:48px;background-repeat:no-repeat;background-position:center center;content:'';display:block;width:5rem;height:5rem;border-radius:40px;position:absolute;top:50%;left:50%;margin-top:-2.5rem;margin-left:-2.5rem;border:2px solid #fff;z-index:1000}
@@ -191,11 +193,12 @@ main{font-family:'Titillium Web','Helvetica Neue',Helvetica,sans-serif;font-weig
 .progress-bar .time-completed,.progress-bar .time-remaining{color:#333}
 .progress-bar .time-completed{float:left}.progress-bar .time-remaining{float:right}
 .icon-clock,.icon-calendar{width:.938rem;height:.938rem;fill:#a9a9a9;vertical-align:middle;margin-right:.188rem}
-.post-content .tags{width:auto;max-width:50rem;float:none;display:block;margin-right:auto;margin-left:auto;padding-left:0;padding-right:0;font-family:'Titillium Web','Helvetica Neue',Helvetica,sans-serif;font-weight:400;font-style:normal;font-size:1.125rem;margin:0 auto 1.813rem;margin-top:1.875rem;letter-spacing:.01rem;line-height:2.5rem;}
-.post-content .tags::after{content:'';display:table;clear:both}
+.post-content .tags, .categories{width:auto;max-width:50rem;float:none;display:block;margin-right:auto;margin-left:auto;padding-left:0;padding-right:0;font-family:'Titillium Web','Helvetica Neue',Helvetica,sans-serif;font-weight:400;font-style:normal;font-size:1.125rem;margin:0 auto 1.813rem;margin-top:1.875rem;letter-spacing:.01rem;line-height:2.5rem;}
+.post-content .tags::after, .categories::after{content:'';display:table;clear:both}
 @media only screen and (min-width:37.5rem){.post-content .tags{font-size:1.25rem;letter-spacing:.05rem}}
-.post-content .tags a{font-size:.875rem;color:#141414;display:inline-block;border:1px solid #141414;border-radius:1.25rem;padding:0 .625rem;margin-right:.125rem;margin-bottom:.5rem;text-decoration:none;-webkit-transition:all .3s;transition:all .3s;}
-.post-content .tags a:hover{color:#fff;border:1px solid #141414;background-color:#141414}
+.post-content .tags a, .categories a{font-size:.875rem;color:#141414;display:inline-block;border:1px solid #141414;border-radius:1.25rem;padding:0 .625rem;margin-right:.125rem;margin-bottom:.5rem;text-decoration:none;-webkit-transition:all .3s;transition:all .3s;}
+.post-content .tags a, .categories a{border-radius:1.0rem;}
+.post-content .tags a:hover, .categories a:hover{color:#fff;border:1px solid #141414;background-color:#141414}
 .post-content .tag-title{font-family:'Titillium Web','Helvetica Neue',Helvetica,sans-serif;font-weight:300;font-style:normal;font-size:2.375rem;margin-top:3.75rem;width:auto;max-width:50rem;float:none;display:block;margin-right:auto;margin-left:auto;padding-left:0;padding-right:0;}
 .post-content .tag-title::after{content:'';display:table;clear:both}
 @media only screen and (max-width:37.5rem){.post-content .tag-title{font-size:1.875rem;margin-top:1.25rem;padding:0 1.25rem}}

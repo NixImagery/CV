@@ -7,7 +7,7 @@ description: "Post and page categories."
 <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
 <p itemprop="description" class="subtitle">{{ page.description }}</p>
 
-<div class="tags">
+<div class="categories">
 {% assign categories_list = site.categories %}
   {% if categories_list.first[0] == null %}
     {% for category in categories_list %}
