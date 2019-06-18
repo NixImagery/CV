@@ -3,7 +3,7 @@ title: Nick Hood | Blog and CV
 email: nick@cullaloe.com
 description: Personal blog and CV repository.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://cullaloe.com" # the base hostname & protocol for your site
+url: "https://git.cullaloe.net/CV/" # the base hostname & protocol for your site
 google_analytics: "UA-29333042-2"
 
 # User Settings
