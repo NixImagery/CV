@@ -49,8 +49,8 @@ function adjust_textarea(h) {
 }
 </script>
 
-<script src="https://unpkg.com/vue@2.4.2"></script>
-<script src="https://unpkg.com/vee-validate@2.0.0-rc.8"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vee-validate"></script>
 <script type="text/javascript">
 Vue.use(VeeValidate);
 
