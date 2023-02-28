@@ -8,6 +8,6 @@ This is my cv repository. You are welcome to use the source files to make your o
 Feedback welcome. Offers of work, maybe even more so.
 
 Nick Hood  
-http://cullaloe.com  
-@cullaloe
+https://niximagery.github.io
+@Niximagery
 	
