@@ -3,3 +3,6 @@
 Plaudits/PGDE EY feedback.rtf
 cv.synctex.gz
 Certificates/.DS_Store
+.aux
+.log
+.out
