@@ -2,6 +2,6 @@
 .DS_Store
 Plaudits/PGDE EY feedback.rtf
 cv.synctex.gz
-.aux
-.log
-.out
+*.aux
+*.log
+*.out
